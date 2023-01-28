@@ -41,7 +41,7 @@ const styles = StyleSheet.create({
         paddingTop: Platform.OS === "android" ? StatusBar.currentHeight : 0,
     },
     logo: {
-        width:baseStyle.width (80),
+        width:baseStyle.width (85),
         height:baseStyle.hight(85),
         marginVertical:baseStyle.marginVertical (10),
     },

@@ -1,9 +1,22 @@
 import React from "react";
 import { SafeAreaView, View, Image, StyleSheet, Platform, StatusBar } from "react-native";
-import { images, theme, baseStyle } from "../config";
+import { images, theme, baseStyle, routes } from "../config";
 import { Button, Heading, Input, Paragraph } from "../components";
+import { useNavigation } from "@react-navigation/native";
 
 export const SecureAccount = () => {
+
+const navigation = useNavigation();
+
+
+const submitHandler=()=>{
+    navigation.navigate(routes.ABOUT);
+};
+
+
+
+
+
     return (
         <SafeAreaView style={styles.container}>
             <Image source={images.logo} resizeMode="cover" style={styles.logo} />
@@ -15,7 +28,10 @@ export const SecureAccount = () => {
             
                 <Input style={styles.input} placeholder="Password" secureTextEntry/>
                 <Input style={styles.input} placeholder="Confirm Password" secureTextEntry/>
-                <Button >Next (1/3)</Button>
+                <Button 
+                onPress={submitHandler} >
+                    Next (1/3)
+                    </Button>
         
             </View>
         </SafeAreaView>

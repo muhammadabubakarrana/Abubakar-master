@@ -88,12 +88,14 @@ export const Preferences = () => {
                             labelStyle={styles.labelStyle} />
                     </View>
                 </View>
-                <Button style={styles.btn}>Submit (2/3)</Button>
+                <Button style={styles.btn}>Submit (3/3)</Button>
             </View>
             <SuccessModal 
             label="All Done!"
             description="Your account has been successfully registered. You can now proceed a trip or a reservation for your date."
-            visible={false} />
+            visible={false} 
+            
+            />
            
                </SafeAreaView>
     );

@@ -1,10 +1,20 @@
 import React from "react";
 import { SafeAreaView, View, Image, StyleSheet, Platform, StatusBar } from "react-native";
-import { baseStyle, images, theme } from "../config";
+import { baseStyle, images, routes, theme } from "../config";
 import { Button, Heading, Paragraph } from "../components";
 import { Chip } from "../components/chip";
+import { useNavigation } from "@react-navigation/native";
 
 export const About = () => {
+
+    const navigation = useNavigation();
+
+    const submitHandler = () => {
+        navigation.navigate(routes.PREFERENCES);
+    };
+
+
+
     return (
         <SafeAreaView style={styles.container}>
             <Image source={images.logo} resizeMode="cover" style={styles.logo} />
@@ -16,7 +26,7 @@ export const About = () => {
                 <View >
                     <Paragraph>Gender</Paragraph>
                     <View style={styles.chipContainer}>
-                        <Chip label="Male" chipStyle={styles.chip} checked/>
+                        <Chip label="Male" chipStyle={styles.chip} checked />
                         <Chip label="Female" chipStyle={styles.chip} />
                         <Chip label="Others" chipStyle={styles.chip} />
                     </View>
@@ -26,10 +36,14 @@ export const About = () => {
                     <View style={styles.chipContainer}>
                         <Chip label="Students" chipStyle={styles.chip} />
                         <Chip label="Working" chipStyle={styles.chip} checked />
-                        <Chip label="Others" chipStyle={styles.chip} checked/>
+                        <Chip label="Others" chipStyle={styles.chip} checked />
                     </View>
                 </View>
-                <Button style={styles.btn}>Submit (2/3)</Button>
+                <Button
+                    style={styles.btn}
+                    onPress={submitHandler} >
+                    Submit (2/3)
+                </Button>
             </View>
         </SafeAreaView>
     );

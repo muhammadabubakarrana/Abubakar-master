@@ -4,3 +4,4 @@ export * from "./secureAccount";
 export * from "./about";
 export * from "./preferences";
 export * from "./forgotPassword";
+export * from "./near-me";
