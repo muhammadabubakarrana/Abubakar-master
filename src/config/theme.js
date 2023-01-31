@@ -9,6 +9,7 @@ export const theme ={
         darkSilver: "#0000004D"
     },
     font:{
-        regular:"Lato-Regular"
-    }
+        regular:"Lato-Regular",
+        Bold: "Lato-Bold"
+    },
 };

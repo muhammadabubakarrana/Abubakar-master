@@ -5,3 +5,4 @@ export * from "./paragraph";
 export * from "./input";
 export * from "./chip";
 export * from "./success-modal";
+export * from "./map";

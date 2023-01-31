@@ -20,7 +20,7 @@ export const Checkbox = ({ text, value, ...restProps }) => {
             opacity: 0.6,
             textDecorationLine: 'none',
         }}
-        onPress={isChecked => { }}
+        onPress={isChecked => {true}}
       
     />
     );
