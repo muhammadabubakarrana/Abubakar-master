@@ -1,11 +1,40 @@
 import React from "react";
 import { View, StyleSheet, TouchableOpacity, Dimensions } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
-import { Heading, Input, Map } from "../components";
-import { baseStyle, theme } from "../config";
+import { Carousal, Heading, Input, Map } from "../components";
+import { baseStyle, images, theme } from "../config";
 
 
 export const NearMe = () => {
+
+const data=[
+    {
+        name: "Mann - Cartwright Dine",
+        country: "Italian",
+        rating: "4.1 rating",
+        location: '2535 Wunsch Stream',
+        time: 'Open until 3pm',
+        img: images.home1,
+    },
+    {
+        name: "Mann - Cartwright Dine",
+        country: "Italian",
+        rating: "4.1 rating",
+        location: '2535 Wunsch Stream',
+        time: 'Open until 3pm',
+        img: images.home2,
+    },
+    {
+        name: "Mann - Cartwright Dine",
+        country: "Italian",
+        rating: "4.1 rating",
+        location: '2535 Wunsch Stream',
+        time: 'Open until 3pm',
+        img: images.home1,
+    },
+];
+
+
     return (
         <SafeAreaView style={styles.container} edges={["left", "right", "top"]}>
             <View style={styles.mapcontainer}>
@@ -15,11 +44,12 @@ export const NearMe = () => {
             <View style={styles.headingContainer}>
                 <Heading style={styles.heading}>Things To Do</Heading>
                 <TouchableOpacity>
-                    <Heading style={[{...styles.heading, color:theme.colors.blue}]}>
+                    <Heading
+                        style={[{ ...styles.heading, color: theme.colors.blue }]}>
                         List View</Heading>
                 </TouchableOpacity>
             </View>
-             {/* Carousal Component */}
+            <Carousal data={data} />
         </SafeAreaView>
     );
 };
@@ -31,8 +61,8 @@ const styles = StyleSheet.create({
         paddingHorizontal: baseStyle.paddingHorizontal(10),
     },
     mapcontainer: {
-      width: '100%',
-      height: (Dimensions.get('screen').height*50)/100,
+        width: '100%',
+        height: (Dimensions.get('screen').height * 50) / 100,
     },
     input: {
         position: 'absolute',
@@ -48,7 +78,7 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         marginTop: baseStyle.marginTop(20),
     },
-    heading:{
+    heading: {
         fontSize: baseStyle.fontSize(14),
         lineHeight: baseStyle.lineHight(17),
         fontFamily: theme.font.Bold,
