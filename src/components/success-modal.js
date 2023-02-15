@@ -3,29 +3,29 @@ import { Image, Modal, StyleSheet, View } from "react-native";
 import { baseStyle, images, theme } from "../config";
 import { Heading, Paragraph } from "../components";
 
-export const SuccessModal = ({visible, label, description, onRequestClose, ...restProps}) => {
-   return (
-   <Modal
-        animationType="slide"
-        visible={visible}
-        onRequestClose={onRequestClose}
-        {...restProps}>
-        <View style={styles.container}>
-            <View style={styles.modal}>
-            <Heading center>{label}</Heading>
-            <Image source={images.checkMark} resizeMode="contain" style={styles.img} />
-            <Paragraph center>{description}</Paragraph>
-            </View>         
-        </View>
-    </Modal>
-   );
+export const SuccessModal = ({ visible, label, description, onRequestClose, ...restProps }) => {
+    return (
+        <Modal
+            animationType="slide"
+            visible={visible}
+            onRequestClose={onRequestClose}
+            {...restProps}>
+            <View style={styles.container}>
+                <View style={styles.modal}>
+                    <Heading center>{label}</Heading>
+                    <Image source={images.checkMark} resizeMode="contain" style={styles.img} />
+                    <Paragraph center>{description}</Paragraph>
+                </View>
+            </View>
+        </Modal>
+    );
 };
 
 
 
 const styles = StyleSheet.create({
     container: {
-        flex:1,
+        flex: 1,
         justifyContent: 'center',
         alignItems: 'center',
     },
@@ -36,16 +36,16 @@ const styles = StyleSheet.create({
         paddingHorizontal: baseStyle.paddingHorizontal(20),
         width: "80%",
         shadowColor: theme.colors.darkSilver,
-        shadowOffset:{
-            width:0,
-            height:0
+        shadowOffset: {
+            width: 0,
+            height: 0
         },
-        shadowRadius:6,
-        elevation:5,
-        shadowOpacity:1,
+        shadowRadius: 6,
+        elevation: 5,
+        shadowOpacity: 1,
         height: 'auto',
     },
-    img:{
+    img: {
         marginVertical: baseStyle.marginVertical(20),
         alignSelf: "center"
     }

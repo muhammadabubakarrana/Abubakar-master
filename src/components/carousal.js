@@ -24,7 +24,7 @@ export const Carousal = ({ data, style }) => {
                         }}>
                         <Paragraph style={styles.para}>{item.country}</Paragraph>
                         <View style={styles.flex}>
-                            <Image source={images.starIcon} style={styles.img} />
+                            <Image source={images.star} style={styles.img} />
                             <Paragraph style={styles.para}>{item.rating}</Paragraph>
                         </View>
                     </View>
@@ -80,7 +80,7 @@ para:{
     fontSize: baseStyle.fontSize(10),
     lineHeight: baseStyle.lineHight(12),
     opacity:1,
-    fontFamily: theme.font.Bold
+    fontFamily: theme.font.light,
 },
 img:{
         marginRight: baseStyle.marginRight(3),

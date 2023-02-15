@@ -6,7 +6,7 @@ import { SafeAreaProvider } from "react-native-safe-area-context";
 
 export const Navigation = () => {
 
-    let loggedIn = true;
+    let loggedIn = false;
 
     return (
         <SafeAreaProvider>

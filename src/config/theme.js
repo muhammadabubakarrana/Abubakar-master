@@ -10,6 +10,7 @@ export const theme ={
     },
     font:{
         regular:"Lato-Regular",
-        Bold: "Lato-Bold"
+        Bold: "Lato-Bold",
+        light: 'Lato-Light',
     },
 };
