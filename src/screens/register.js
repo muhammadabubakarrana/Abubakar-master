@@ -1,10 +1,14 @@
 import React from "react";
 import { SafeAreaView, View, Image, StyleSheet, Platform, StatusBar } from "react-native";
-import { images, theme, baseStyle } from "../config";
+import { images, theme, baseStyle, routes } from "../config";
 import { Button, Checkbox, Heading, Input, Paragraph } from "../components";
+import { useNavigation } from "@react-navigation/native";
 
 
 export const Register = () => {
+
+    const navigation = useNavigation();
+
     return (
         <SafeAreaView style={styles.container}>
             <Image source={images.logo} resizeMode="cover" style={styles.logo} />
@@ -21,10 +25,15 @@ export const Register = () => {
                 <Input style={styles.input} placeholder="Email"/>
                 <Input style={styles.input} placeholder="User Name"/>
                 <Checkbox  text="Accept Terms & Conditions" style={styles.checkbox}/>
-                <Button >Register</Button>
+                <Button type="filled"
+                onPress={()=>navigation.navigate(routes.SECCURE_ACCOUNT)}
+                >Register</Button>
                 <View style={styles.line} />
                 <Paragraph center>Already have an account?</Paragraph>
-                <Button type="outlined" style={styles.btn}>
+                <Button type="outlined" 
+                style={styles.btn}
+                onPress={()=>navigation.navigate(routes.LOGIN)}
+                >
                     Login</Button>
             </View>
         </SafeAreaView>
@@ -41,7 +50,7 @@ const styles = StyleSheet.create({
         paddingTop: Platform.OS === "android" ? StatusBar.currentHeight : 0,
     },
     logo: {
-        width:baseStyle.width (85),
+        width:baseStyle.width (100),
         height:baseStyle.hight(85),
         marginVertical:baseStyle.marginVertical (10),
     },
