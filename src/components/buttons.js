@@ -2,18 +2,18 @@ import React from "react";
 import { TouchableOpacity, StyleSheet, Text } from "react-native";
 import { baseStyle, theme } from "../config";
 
-export const Button = ({ children, type, style, ...restProps }) => {
+export const Button = ({ children, type, style,danger, ...restProps }) => {
     return (
         <TouchableOpacity {...restProps}
             style=
             {[type === 'outlined'
-                ? { ...styles.btn, ...styles.btnOutlined }
-                : { ...styles.btn, ...styles.btnFilled }, style]}>
+                ? { ...styles.btn, ...styles.btnOutlined, borderColor:danger?"red":'auto' }
+                : { ...styles.btn, ...styles.btnFilled, borderColor:danger?"red":'auto' }, style]}>
 
             <Text style={
                 type === 'outlined'
-                    ? { ...styles.text, ...styles.textOutlined }
-                    : { ...styles.text, ...styles.textFilled, }
+                    ? { ...styles.text, ...styles.textOutlined, color:danger?"red":'auto' }
+                    : { ...styles.text, ...styles.textFilled, color:danger?"red":'auto' }
             }>{children}</Text>
         </TouchableOpacity>
     );

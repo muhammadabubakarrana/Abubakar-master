@@ -1,13 +1,15 @@
 import React from "react";
 import { routes, theme, images, baseStyle } from "../config";
-import { NearMe } from "../screens"
+import { NearMe, VenueProfile } from "../screens"
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { Image, StyleSheet } from "react-native";
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
 
 const Tab = createBottomTabNavigator();
+const Stack = createNativeStackNavigator();
 
 
-export const PrivateNavigation = () => {
+const HomeTabs=()=>{
     return (
         // Can use screenOptions in  <Tab.Navigator> as a prop for changing all screens
         <Tab.Navigator
@@ -26,12 +28,23 @@ export const PrivateNavigation = () => {
                 options={{
                     tabBarIcon: ({ focused }) => (
                         <Image source={images.pinLocation}
-                            style={{ tintColor: focused ? theme.colors.blue : theme.colors.black }}
-                        />
+                            style={{ tintColor: focused ? theme.colors.blue : theme.colors.black }} />
                     )
                 }}
             />
         </Tab.Navigator>
+    );
+}
+
+
+
+
+export const PrivateNavigation = () => {
+    return(
+        <Stack.Navigator screenOptions={{headerShown: false}}>
+            <Stack.Screen name="Home" component={HomeTabs} />
+            <Stack.Screen name={routes.Venue_Profile} component={VenueProfile} />
+        </Stack.Navigator>
     );
 };
 

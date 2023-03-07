@@ -6,3 +6,4 @@ export * from "./preferences";
 export * from "./forgotPassword";
 export * from "./near-me";
 export * from "./welcome";
+export * from "./venue-profile";

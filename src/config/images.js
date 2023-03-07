@@ -8,4 +8,9 @@ export const images={
     star: require("../assets/images/star/star.png"),
     pin: require("../assets/images/pin/pin.png"),
     clock: require("../assets/images/clock/clock.png"),
+    Share: require("../assets/images/Share/Share.png"),
+    Back: require("../assets/images/Back/Back.png"),
+    direction: require("../assets/images/direction/direction.png"),
+    badge: require("../assets/images/badge/badge.png"),
+    after: require("../assets/images/after/after.png"),
 };
