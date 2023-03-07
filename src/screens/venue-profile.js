@@ -1,29 +1,34 @@
 import React, { useState } from "react";
 import { Image, ScrollView, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
-import { baseStyle, images, theme } from "../config";
+import { baseStyle, images, theme, routes } from "../config";
 import { Button, Input, ReservationModal } from "../components"
 import { useNavigation } from "@react-navigation/native";
 
+
 export const VenueProfile = () => {
 
-        const [showModal, setShowModal]= useState(false)
-        const navigation = useNavigation();
+    const [showModal, setShowModal] = useState(false)
+    const navigation = useNavigation();
 
-        const openModal=()=>{
-            setShowModal(true);
-        }
+    const openModal = () => {
+        setShowModal(true);
+    }
 
-        const closeModal=()=>{
-            setShowModal(false);
-        }
+    const closeModal = () => {
+        setShowModal(false);
+    }
+
+    const forReview=()=>{
+        navigation.navigate(routes.REVIEW);
+    }
 
 
     return (
         <>
             <SafeAreaView edges={["right", "left", "top"]} style={styles.container} >
                 <View style={styles.header} >
-                    <TouchableOpacity onPress={()=>navigation.goBack()}>
+                    <TouchableOpacity onPress={() => navigation.goBack()}>
                         <Image resizeMode="contain" source={images.Back} />
                     </TouchableOpacity>
                     <Text style={styles.headerLabel} > Venue Profile </Text>
@@ -72,7 +77,13 @@ export const VenueProfile = () => {
                             style={styles.inputIcon}
                             resizeMode="contain" />
                         <Input style={styles.input} placeholder="Reviews (245)" />
-                        <Image source={images.after} resizeMode="contain" style={styles.inputIcon} />
+
+                        <TouchableOpacity onPress={forReview} >
+                            <Image
+                                source={images.after}
+                                resizeMode="contain"
+                                style={styles.inputIcon} />
+                        </TouchableOpacity>
                     </View>
 
                     <View style={styles.txtContainer}>
@@ -88,16 +99,16 @@ export const VenueProfile = () => {
 
                 <View style={styles.footer}>
                     <Button
-                     style={styles.btn}
-                     onPress={openModal} 
-                     >Place a Reservation</Button>
+                        style={styles.btn}
+                        onPress={openModal}
+                    >Place a Reservation</Button>
                 </View>
             </SafeAreaView>
 
-            <ReservationModal 
-            visible={showModal}
-            rejectHandler={closeModal}
-            successHandler={closeModal} />
+            <ReservationModal
+                visible={showModal}
+                rejectHandler={closeModal}
+                successHandler={closeModal} />
         </>
     );
 };

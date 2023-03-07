@@ -1,6 +1,6 @@
 import React from "react";
 import { routes, theme, images, baseStyle } from "../config";
-import { NearMe, VenueProfile } from "../screens"
+import { NearMe, Review, VenueProfile } from "../screens"
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { Image, StyleSheet } from "react-native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
@@ -44,6 +44,7 @@ export const PrivateNavigation = () => {
         <Stack.Navigator screenOptions={{headerShown: false}}>
             <Stack.Screen name="Home" component={HomeTabs} />
             <Stack.Screen name={routes.Venue_Profile} component={VenueProfile} />
+            <Stack.Screen name={routes.REVIEW} component={Review}/>
         </Stack.Navigator>
     );
 };

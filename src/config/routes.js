@@ -7,5 +7,6 @@ PREFERENCES:'Preferences',
 FORGOT_PASSWORD:'Forgot Password',
 NEAR_ME:'Near Me',
 WELCOME: 'Welcome',
-Venue_Profile: "Venue Profile"
+Venue_Profile: "Venue Profile",
+REVIEW: "Review",
 };
