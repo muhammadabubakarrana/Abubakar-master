@@ -1,6 +1,6 @@
 import React from "react";
 import { routes, theme, images, baseStyle } from "../config";
-import { NearMe, Review, VenueProfile } from "../screens"
+import { CustomTrip, NearMe, PlanTrip, Review, VenueProfile } from "../screens"
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { Image, StyleSheet } from "react-native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
@@ -8,8 +8,15 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 const Tab = createBottomTabNavigator();
 const Stack = createNativeStackNavigator();
 
+const getIcon=(focused,icon)=>{
+    return( 
+    <Image source={icon}
+        style={{ tintColor: focused ? theme.colors.blue : theme.colors.black }} />
+    );
+};
 
-const HomeTabs=()=>{
+
+const HomeTabs = () => {
     return (
         // Can use screenOptions in  <Tab.Navigator> as a prop for changing all screens
         <Tab.Navigator
@@ -26,12 +33,18 @@ const HomeTabs=()=>{
                 name={routes.NEAR_ME}
                 component={NearMe}
                 options={{
-                    tabBarIcon: ({ focused }) => (
-                        <Image source={images.pinLocation}
-                            style={{ tintColor: focused ? theme.colors.blue : theme.colors.black }} />
-                    )
+                    tabBarIcon: ({ focused }) =>  getIcon(focused,images.pinLocation)
                 }}
             />
+
+            <Tab.Screen
+                name={routes.PLAN_TRIP}
+                component={PlanTrip}
+                options={{
+                    tabBarIcon: ({ focused }) => getIcon(focused,images.map)
+                }}
+            />
+
         </Tab.Navigator>
     );
 }
@@ -40,11 +53,12 @@ const HomeTabs=()=>{
 
 
 export const PrivateNavigation = () => {
-    return(
-        <Stack.Navigator screenOptions={{headerShown: false}}>
+    return (
+        <Stack.Navigator screenOptions={{ headerShown: false }}>
             <Stack.Screen name="Home" component={HomeTabs} />
             <Stack.Screen name={routes.Venue_Profile} component={VenueProfile} />
-            <Stack.Screen name={routes.REVIEW} component={Review}/>
+            <Stack.Screen name={routes.REVIEW} component={Review} />
+            <Stack.Screen name={routes.CUSTOM_TRIP} component={CustomTrip} />
         </Stack.Navigator>
     );
 };

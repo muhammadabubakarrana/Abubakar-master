@@ -86,7 +86,7 @@ const styles = StyleSheet.create({
 
   line: {
     marginVertical: baseStyle.marginVertical(20),
-    borderBottomColor: 'black',
+    borderBottomColor: theme.colors.black,
     width: '70%',
     alignSelf: 'center',
     borderBottomWidth: StyleSheet.hairlineWidth,

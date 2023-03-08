@@ -13,4 +13,11 @@ export const images={
     direction: require("../assets/images/direction/direction.png"),
     badge: require("../assets/images/badge/badge.png"),
     after: require("../assets/images/after/after.png"),
+    map: require("../assets/images/map/map.png"),
+    plus: require("../assets/images/plus/plus.png"),
+    pencil: require("../assets/images/pencil/pencil.png"),
+    shop: require("../assets/images/shop/shop.png"),
+    humantwo: require("../assets/images/humantwo/humantwo.png"),
+    humanone: require("../assets/images/humanone/humanone.png"),
+    Close: require("../assets/images/Close/Close.png")
 };

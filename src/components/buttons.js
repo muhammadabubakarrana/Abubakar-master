@@ -12,8 +12,10 @@ export const Button = ({ children, type, style,danger, ...restProps }) => {
 
             <Text style={
                 type === 'outlined'
-                    ? { ...styles.text, ...styles.textOutlined, color:danger?"red":'auto' }
-                    : { ...styles.text, ...styles.textFilled, color:danger?"red":'auto' }
+                    ? { ...styles.text, ...styles.textOutlined ,
+                         Color : danger ? 'red' :'auto' }
+                    : { ...styles.text, ...styles.textFilled,
+                         Color :danger ? 'red' : 'auto' }
             }>{children}</Text>
         </TouchableOpacity>
     );

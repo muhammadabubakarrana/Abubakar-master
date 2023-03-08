@@ -8,3 +8,5 @@ export * from "./near-me";
 export * from "./welcome";
 export * from "./venue-profile";
 export * from "./review";
+export * from "./plan-trip";
+export * from "./custom-trip";

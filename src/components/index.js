@@ -9,3 +9,4 @@ export * from "./map";
 export * from "./carousal";
 export * from "./list";
 export * from "./reservation-modal";
+export * from "./trip-list";

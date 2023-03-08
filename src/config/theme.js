@@ -6,7 +6,8 @@ export const theme ={
         white:"#FFFFFF",
         grey:"#00000080",
         lightGrey: "#F5F5F5",
-        darkSilver: "#0000004D"
+        darkSilver: "#0000004D",
+        lightBlue: '#cef3f5',
     },
     font:{
         regular:"Lato-Regular",
