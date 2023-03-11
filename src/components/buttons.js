@@ -7,15 +7,14 @@ export const Button = ({ children, type, style,danger, ...restProps }) => {
         <TouchableOpacity {...restProps}
             style=
             {[type === 'outlined'
-                ? { ...styles.btn, ...styles.btnOutlined, borderColor:danger?"red":'auto' }
-                : { ...styles.btn, ...styles.btnFilled, borderColor:danger?"red":'auto' }, style]}>
+                ? { ...styles.btn, ...styles.btnOutlined, borderColor:danger?"red": theme.colors.blue }
+                : { ...styles.btn, ...styles.btnFilled }, style]}>
 
             <Text style={
                 type === 'outlined'
                     ? { ...styles.text, ...styles.textOutlined ,
-                         Color : danger ? 'red' :'auto' }
-                    : { ...styles.text, ...styles.textFilled,
-                         Color :danger ? 'red' : 'auto' }
+                        Color : danger ? 'red' : theme.colors.blue }
+                    : { ...styles.text, ...styles.textFilled}
             }>{children}</Text>
         </TouchableOpacity>
     );

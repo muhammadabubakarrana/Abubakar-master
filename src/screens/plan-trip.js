@@ -74,7 +74,7 @@ export const PlanTrip = () => {
                         <Text style={styles.location} >Current Location</Text>
                     </View>
                 </View>
-                <TouchableOpacity>
+                <TouchableOpacity onPress={()=>navigation.navigate(routes.TRIP_LOCATION)} >
                     <Image source={images.pencil} style={styles.pencil} />
                 </TouchableOpacity>
             </View>

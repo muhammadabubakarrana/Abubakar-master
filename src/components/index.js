@@ -10,3 +10,6 @@ export * from "./carousal";
 export * from "./list";
 export * from "./reservation-modal";
 export * from "./trip-list";
+export * from "./footer";
+export * from "./wrapper";
+export * from "./reservatin-placed";

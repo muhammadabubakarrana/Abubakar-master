@@ -11,4 +11,8 @@ Venue_Profile: "Venue Profile",
 REVIEW: "Review",
 PLAN_TRIP: 'Plan Trip',
 CUSTOM_TRIP: "Custom Trip",
+TRIP_LOCATION: 'TripLocation',
+PLANNED_DATES: "Planned",
+BLOG: "Blog",
+MENU: 'Menu', 
 };

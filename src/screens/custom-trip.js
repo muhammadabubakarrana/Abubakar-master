@@ -2,7 +2,7 @@ import { useNavigation } from "@react-navigation/native";
 import React from "react";
 import { Image, StyleSheet, TouchableOpacity, View, Text } from "react-native"
 import { SafeAreaView } from "react-native-safe-area-context";
-import { Button, Input, Paragraph } from "../components";
+import { Footer, Input, Paragraph } from "../components";
 import { baseStyle, images, theme } from "../config";
 
 export const CustomTrip = () => {
@@ -30,9 +30,9 @@ export const CustomTrip = () => {
                 <Text style={styles.venue}>Add a Venue</Text>
             </TouchableOpacity>
             </View>
-            <View style={styles.footer} >
-                <Button type="filled" >Plan Custom Trip</Button>
-            </View>
+            {/* This footer component which
+            included a button with white outer layer */}
+            <Footer>Plan Custom Trip</Footer>
         </SafeAreaView>
     );
 };
@@ -80,25 +80,24 @@ const styles = StyleSheet.create({
         fontSize: baseStyle.fontSize(14),
         lineHeight: baseStyle.lineHight(17)
     },
-    footer: {
-        backgroundColor: theme.colors.white,
-        borderTopLeftRadius: baseStyle.borderTopLeftRadius(32),
-        borderTopRightRadius: baseStyle.borderTopRightRadius(32),
-        position: 'absolute',
-        opacity: 1,
-        bottom: 0,
-        width: "100%",
-        paddingVertical: baseStyle.paddingVertical(18),
-        paddingHorizontal: baseStyle.paddingHorizontal(18),
-        elevation: 15,
-        shadowColor: theme.colors.black,
-        shadowOffset: { height: -5, width: 0 },
-        shadowOpacity: 1,
-        shadowRadius: 6,
+    input:{
+        marginTop: baseStyle.marginTop(15),
     },
     heading:{
         fontFamily: theme.font.Bold,
         fontSize: baseStyle.fontSize(16),
         lineHeight: baseStyle.lineHight(19)
     },
+    tripPlan:{
+        fontFamily: theme.font.Bold,
+        fontSize: baseStyle.fontSize(14),
+        lineHeight: baseStyle.lineHight(17),
+        marginBottom: baseStyle.marginBottom(5),
+    },
+    para:{
+        fontFamily: theme.font.light,
+        fontSize: baseStyle.fontSize(12),
+        lineHeight: baseStyle.lineHight(15),
+        marginBottom: baseStyle.marginBottom(10),
+    }
 });

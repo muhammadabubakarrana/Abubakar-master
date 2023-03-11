@@ -13,125 +13,125 @@ export const Review = () => {
     return (
         <SafeAreaView edges={["right", "left", "top"]} style={styles.container} >
             <View style={styles.header}>
-                <TouchableOpacity onPress={()=>navigation.goBack()}>
+                <TouchableOpacity onPress={() => navigation.goBack()}>
                     <Image source={images.Back} resizeMode="contain" />
                 </TouchableOpacity>
                 <Text style={styles.headerLabel} >Reviews (245)</Text>
             </View>
 
 
-            <ScrollView showsVerticalScrollIndicator={false} >
-            {/* 1st BOX */}
+            <ScrollView showsVerticalScrollIndicator={false} style={styles.scrollContainer} >
+                {/* 1st BOX */}
 
-            <View style={styles.subContainer}>
-                <View style={styles.flex} > 
-                    <Text style={styles.txtHeading}>Roberto Yundt Jr.</Text>
+                <View style={styles.subContainer}>
                     <View style={styles.flex} >
-                        <Text style={styles.txtReview}> 3.6 </Text>
-                        <Image source={images.star} resizeMode="contain" />
+                        <Text style={styles.txtHeading}>Roberto Yundt Jr.</Text>
+                        <View style={styles.flex} >
+                            <Text style={styles.txtReview}> 3.6 </Text>
+                            <Image source={images.star} resizeMode="contain" />
+                        </View>
                     </View>
+                    <Text style={styles.detail} >Soluta laboriosam perferendis impedit ut facere. Et ab quo quo nihil eos corrupti occaecati sunt. Voluptatibus error veritatis repudiandae nihil vero nisi. Molestiae voluptatem amet laboriosam.</Text>
+                    <Text style={styles.time} >4 days ago</Text>
                 </View>
-                <Text style={styles.detail} >Soluta laboriosam perferendis impedit ut facere. Et ab quo quo nihil eos corrupti occaecati sunt. Voluptatibus error veritatis repudiandae nihil vero nisi. Molestiae voluptatem amet laboriosam.</Text>
-                <Text style={styles.time} >4 days ago</Text>
-            </View>
 
-        {/* 2st BOX */}
+                {/* 2st BOX */}
 
-        <View style={styles.subContainer}>
-                <View style={styles.flex} > 
-                    <Text style={styles.txtHeading}>Darrin Olson</Text>
+                <View style={styles.subContainer}>
                     <View style={styles.flex} >
-                        <Text style={styles.txtReview}> 4.2 </Text>
-                        <Image source={images.star} resizeMode="contain" />
+                        <Text style={styles.txtHeading}>Darrin Olson</Text>
+                        <View style={styles.flex} >
+                            <Text style={styles.txtReview}> 4.2 </Text>
+                            <Image source={images.star} resizeMode="contain" />
+                        </View>
                     </View>
+                    <Text style={styles.detail} >Soluta laboriosam perferendis impedit ut facere. Et ab quo quo nihil eos corrupti occaecati sunt. Voluptatibus error veritatis repudiandae nihil vero nisi. Molestiae voluptatem amet laboriosam.</Text>
+                    <Text style={styles.time} >10 days ago</Text>
                 </View>
-                <Text style={styles.detail} >Soluta laboriosam perferendis impedit ut facere. Et ab quo quo nihil eos corrupti occaecati sunt. Voluptatibus error veritatis repudiandae nihil vero nisi. Molestiae voluptatem amet laboriosam.</Text>
-                <Text style={styles.time} >10 days ago</Text>
-            </View>
 
-            {/* 3rdt BOX */}
+                {/* 3rdt BOX */}
 
-            <View style={styles.subContainer}>
-                <View style={styles.flex} > 
-                    <Text style={styles.txtHeading}>Bryant Grimes</Text>
+                <View style={styles.subContainer}>
                     <View style={styles.flex} >
-                        <Text style={styles.txtReview}> 4.6 </Text>
-                        <Image source={images.star} resizeMode="contain" />
+                        <Text style={styles.txtHeading}>Bryant Grimes</Text>
+                        <View style={styles.flex} >
+                            <Text style={styles.txtReview}> 4.6 </Text>
+                            <Image source={images.star} resizeMode="contain" />
+                        </View>
                     </View>
+                    <Text style={styles.detail} >Soluta laboriosam perferendis impedit ut facere. Et ab quo quo nihil eos corrupti occaecati sunt. Voluptatibus error veritatis repudiandae nihil vero nisi. Molestiae voluptatem amet laboriosam.</Text>
+                    <Text style={styles.time} >7 days ago</Text>
                 </View>
-                <Text style={styles.detail} >Soluta laboriosam perferendis impedit ut facere. Et ab quo quo nihil eos corrupti occaecati sunt. Voluptatibus error veritatis repudiandae nihil vero nisi. Molestiae voluptatem amet laboriosam.</Text>
-                <Text style={styles.time} >7 days ago</Text>
-            </View>
 
                 {/* 4th BOX */}
 
                 <View style={styles.subContainer}>
-                <View style={styles.flex} > 
-                    <Text style={styles.txtHeading}>Roberto Yundt Jr.</Text>
                     <View style={styles.flex} >
-                        <Text style={styles.txtReview}> 3.6 </Text>
-                        <Image source={images.star} resizeMode="contain" />
+                        <Text style={styles.txtHeading}>Roberto Yundt Jr.</Text>
+                        <View style={styles.flex} >
+                            <Text style={styles.txtReview}> 3.6 </Text>
+                            <Image source={images.star} resizeMode="contain" />
+                        </View>
                     </View>
+                    <Text style={styles.detail} >Soluta laboriosam perferendis impedit ut facere. Et ab quo quo nihil eos corrupti occaecati sunt. Voluptatibus error veritatis repudiandae nihil vero nisi. Molestiae voluptatem amet laboriosam.</Text>
+                    <Text style={styles.time} >4 days ago</Text>
                 </View>
-                <Text style={styles.detail} >Soluta laboriosam perferendis impedit ut facere. Et ab quo quo nihil eos corrupti occaecati sunt. Voluptatibus error veritatis repudiandae nihil vero nisi. Molestiae voluptatem amet laboriosam.</Text>
-                <Text style={styles.time} >4 days ago</Text>
-            </View>
 
                 {/* 5th BOX */}
 
                 <View style={styles.subContainer}>
-                <View style={styles.flex} > 
-                    <Text style={styles.txtHeading}>Roberto Yundt Jr.</Text>
                     <View style={styles.flex} >
-                        <Text style={styles.txtReview}> 3.6 </Text>
-                        <Image source={images.star} resizeMode="contain" />
+                        <Text style={styles.txtHeading}>Roberto Yundt Jr.</Text>
+                        <View style={styles.flex} >
+                            <Text style={styles.txtReview}> 3.6 </Text>
+                            <Image source={images.star} resizeMode="contain" />
+                        </View>
                     </View>
+                    <Text style={styles.detail} >Soluta laboriosam perferendis impedit ut facere. Et ab quo quo nihil eos corrupti occaecati sunt. Voluptatibus error veritatis repudiandae nihil vero nisi. Molestiae voluptatem amet laboriosam.</Text>
+                    <Text style={styles.time} >4 days ago</Text>
                 </View>
-                <Text style={styles.detail} >Soluta laboriosam perferendis impedit ut facere. Et ab quo quo nihil eos corrupti occaecati sunt. Voluptatibus error veritatis repudiandae nihil vero nisi. Molestiae voluptatem amet laboriosam.</Text>
-                <Text style={styles.time} >4 days ago</Text>
-            </View>
 
-             {/* 7th BOX */}
+                {/* 7th BOX */}
 
-             <View style={styles.subContainer}>
-                <View style={styles.flex} > 
-                    <Text style={styles.txtHeading}>Roberto Yundt Jr.</Text>
+                <View style={styles.subContainer}>
                     <View style={styles.flex} >
-                        <Text style={styles.txtReview}> 3.6 </Text>
-                        <Image source={images.star} resizeMode="contain" />
+                        <Text style={styles.txtHeading}>Roberto Yundt Jr.</Text>
+                        <View style={styles.flex} >
+                            <Text style={styles.txtReview}> 3.6 </Text>
+                            <Image source={images.star} resizeMode="contain" />
+                        </View>
                     </View>
+                    <Text style={styles.detail} >Soluta laboriosam perferendis impedit ut facere. Et ab quo quo nihil eos corrupti occaecati sunt. Voluptatibus error veritatis repudiandae nihil vero nisi. Molestiae voluptatem amet laboriosam.</Text>
+                    <Text style={styles.time} >4 days ago</Text>
                 </View>
-                <Text style={styles.detail} >Soluta laboriosam perferendis impedit ut facere. Et ab quo quo nihil eos corrupti occaecati sunt. Voluptatibus error veritatis repudiandae nihil vero nisi. Molestiae voluptatem amet laboriosam.</Text>
-                <Text style={styles.time} >4 days ago</Text>
-            </View>
 
-             {/* 8th BOX */}
+                {/* 8th BOX */}
 
-             <View style={styles.subContainer}>
-                <View style={styles.flex} > 
-                    <Text style={styles.txtHeading}>Roberto Yundt Jr.</Text>
+                <View style={styles.subContainer}>
                     <View style={styles.flex} >
-                        <Text style={styles.txtReview}> 3.6 </Text>
-                        <Image source={images.star} resizeMode="contain" />
+                        <Text style={styles.txtHeading}>Roberto Yundt Jr.</Text>
+                        <View style={styles.flex} >
+                            <Text style={styles.txtReview}> 3.6 </Text>
+                            <Image source={images.star} resizeMode="contain" />
+                        </View>
                     </View>
+                    <Text style={styles.detail} >Soluta laboriosam perferendis impedit ut facere. Et ab quo quo nihil eos corrupti occaecati sunt. Voluptatibus error veritatis repudiandae nihil vero nisi. Molestiae voluptatem amet laboriosam.</Text>
+                    <Text style={styles.time} >4 days ago</Text>
                 </View>
-                <Text style={styles.detail} >Soluta laboriosam perferendis impedit ut facere. Et ab quo quo nihil eos corrupti occaecati sunt. Voluptatibus error veritatis repudiandae nihil vero nisi. Molestiae voluptatem amet laboriosam.</Text>
-                <Text style={styles.time} >4 days ago</Text>
-            </View>
 
-             {/* 9th BOX */}
+                {/* 9th BOX */}
 
-             <View style={styles.subContainer}>
-                <View style={styles.flex} > 
-                    <Text style={styles.txtHeading}>Roberto Yundt Jr.</Text>
+                <View style={styles.subContainer}>
                     <View style={styles.flex} >
-                        <Text style={styles.txtReview}> 3.6 </Text>
-                        <Image source={images.star} resizeMode="contain" />
+                        <Text style={styles.txtHeading}>Roberto Yundt Jr.</Text>
+                        <View style={styles.flex} >
+                            <Text style={styles.txtReview}> 3.6 </Text>
+                            <Image source={images.star} resizeMode="contain" />
+                        </View>
                     </View>
+                    <Text style={styles.detail} >Soluta laboriosam perferendis impedit ut facere. Et ab quo quo nihil eos corrupti occaecati sunt. Voluptatibus error veritatis repudiandae nihil vero nisi. Molestiae voluptatem amet laboriosam.</Text>
+                    <Text style={styles.time} >4 days ago</Text>
                 </View>
-                <Text style={styles.detail} >Soluta laboriosam perferendis impedit ut facere. Et ab quo quo nihil eos corrupti occaecati sunt. Voluptatibus error veritatis repudiandae nihil vero nisi. Molestiae voluptatem amet laboriosam.</Text>
-                <Text style={styles.time} >4 days ago</Text>
-            </View>
 
             </ScrollView>
 
@@ -148,35 +148,37 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         backgroundColor: theme.colors.white,
-        
+
+    },
+    scrollContainer: {
+        marginHorizontal: baseStyle.marginHorizontal(15),
     },
     header: {
         flexDirection: 'row',
         justifyContent: 'flex-start',
         alignItems: 'center'
     },
-    headerLabel:{
+    headerLabel: {
         marginLeft: baseStyle.marginLeft(100),
         color: theme.colors.black,
         fontFamily: theme.font.Bold,
         fontSize: baseStyle.fontSize(16),
         lineHeight: baseStyle.lineHight(19),
     },
-    flex:{
+    flex: {
         flexDirection: 'row',
         justifyContent: 'space-between',
-        alignItems:"center",
-        
+        alignItems: "center",
+
     },
-    subContainer:{
+    subContainer: {
         paddingHorizontal: baseStyle.paddingHorizontal(15),
         backgroundColor: theme.colors.lightGrey,
-        marginHorizontal: baseStyle.marginHorizontal(15),
         borderRadius: baseStyle.borderRadius(16),
         paddingVertical: baseStyle.paddingVertical(10),
         marginVertical: baseStyle.marginVertical(10)
     },
-    detail:{
+    detail: {
         marginVertical: baseStyle.marginVertical(10),
         color: theme.colors.black,
         fontSize: baseStyle.fontSize(12),
@@ -190,14 +192,14 @@ const styles = StyleSheet.create({
         fontSize: baseStyle.fontSize(12),
         lineHeight: baseStyle.lineHight(15)
     },
-    time:{
+    time: {
         color: theme.colors.black,
         fontSize: baseStyle.fontSize(10),
         lineHeight: baseStyle.lineHight(12),
         opacity: 0.6,
         fontFamily: theme.font.regular
     },
-    txtReview:{
+    txtReview: {
         fontFamily: theme.font.light,
         color: theme.colors.black,
         fontSize: baseStyle.fontSize(12),

@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Image, ScrollView, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { baseStyle, images, theme, routes } from "../config";
-import { Button, Input, ReservationModal } from "../components"
+import { Button, Footer, Input, ReservationModal } from "../components"
 import { useNavigation } from "@react-navigation/native";
 
 
@@ -97,12 +97,12 @@ export const VenueProfile = () => {
                     </View>
                 </ScrollView>
 
-                <View style={styles.footer}>
+                {/* <View style={styles.footer}>
                     <Button
-                        style={styles.btn}
                         onPress={openModal}
                     >Place a Reservation</Button>
-                </View>
+                </View> */}
+                <Footer onPress={openModal} >Place a Reservation</Footer>
             </SafeAreaView>
 
             <ReservationModal
@@ -185,22 +185,22 @@ const styles = StyleSheet.create({
         marginTop: baseStyle.marginTop(30),
         opacity: 1,
     },
-    footer: {
-        backgroundColor: theme.colors.white,
-        borderTopLeftRadius: baseStyle.borderTopLeftRadius(32),
-        borderTopRightRadius: baseStyle.borderTopRightRadius(32),
-        position: 'absolute',
-        opacity: 1,
-        bottom: 0,
-        width: "100%",
-        paddingVertical: baseStyle.paddingVertical(18),
-        paddingHorizontal: baseStyle.paddingHorizontal(18),
-        elevation: 5,
-        shadowColor: theme.colors.black,
-        shadowOffset: { height: -5, width: 0 },
-        shadowOpacity: 1,
-        shadowRadius: 6,
-    },
+    // footer: {
+    //     backgroundColor: theme.colors.white,
+    //     borderTopLeftRadius: baseStyle.borderTopLeftRadius(32),
+    //     borderTopRightRadius: baseStyle.borderTopRightRadius(32),
+    //     position: 'absolute',
+    //     opacity: 1,
+    //     bottom: 0,
+    //     width: "100%",
+    //     paddingVertical: baseStyle.paddingVertical(18),
+    //     paddingHorizontal: baseStyle.paddingHorizontal(18),
+    //     elevation: 5,
+    //     shadowColor: theme.colors.black,
+    //     shadowOffset: { height: -5, width: 0 },
+    //     shadowOpacity: 1,
+    //     shadowRadius: 6,
+    // },
     txtContainer: {
         marginHorizontal: baseStyle.marginHorizontal(15)
     }

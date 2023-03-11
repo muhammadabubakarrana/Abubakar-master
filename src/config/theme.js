@@ -8,6 +8,7 @@ export const theme ={
         lightGrey: "#F5F5F5",
         darkSilver: "#0000004D",
         lightBlue: '#cef3f5',
+        green: '#0ACC4B',
     },
     font:{
         regular:"Lato-Regular",

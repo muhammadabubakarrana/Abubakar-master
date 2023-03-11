@@ -3,9 +3,10 @@ import { FlatList, Image, StyleSheet, TouchableOpacity, View } from "react-nativ
 import { baseStyle, theme, images } from "../config";
 import { Heading, Paragraph } from "../components";
 
-export const TripList = ({ data, style, onPress }) => {
+export const TripList = ({ data, style, onPress, showTime, ...restProps }) => {
     return (
         <FlatList
+            {...restProps}
             data={data}
             style={[style]}
             showsVerticalScrollIndicator={false}
@@ -14,32 +15,39 @@ export const TripList = ({ data, style, onPress }) => {
                     <View style={styles.container}>
                         <Image source={item.img} resizeMode="cover" style={styles.img} />
                         <View style={styles.description}>
-                            <Heading style={styles.heading} >{item.name}</Heading>
 
-                    {/* 1st line after Heading */}
+                            {
+                                showTime && (
+                                    <Heading style={[{ ...styles.remainingTime, color: theme.colors.green }]} >{item.remainingTime}</Heading>
+                                )
+                            }
 
-                            <View
-                                style={{
-                                    ...styles.flex,
-                                    marginVertical: baseStyle.marginVertical(5)
-                                }}>
+                            <Heading style={!showTime ? styles.heading : { ...styles.remainingTime, color: theme.colors.black }} >{item.name}</Heading>
+
+                            {/* 1st line after Heading */}
+                            <View style={showTime ? { flexDirection: 'row', justifyContent: 'space-between', alignItems: "center" } : { flexDirection: 'column' }} >
+                                <View
+                                    style={{
+                                        ...styles.flex,
+                                        marginVertical: baseStyle.marginVertical(5)
+                                    }}>
                                     <Image source={images.shop} style={styles.icon} resizeMode="contain" />
                                     <Paragraph style={styles.para}>{`${item.venues} Venues`}</Paragraph>
-                            </View>
+                                </View>
 
                                 {/* 2nd line after Heading */}
 
 
-                            <View
-                                style={{
-                                    ...styles.flex,
-                                    marginBottom: baseStyle.marginBottom(5)
-                                }}>
-                                <Image source={images.star} style={styles.icon} resizeMode="contain" />
-                                <Paragraph style={styles.para}>{`${item.rating} rating `}</Paragraph>
+                                <View
+                                    style={{
+                                        ...styles.flex,
+                                        marginBottom: baseStyle.marginBottom(5)
+                                    }}>
+                                    <Image source={images.star} style={styles.icon} resizeMode="contain" />
+                                    <Paragraph style={styles.para}>{`${item.rating} rating `}</Paragraph>
+                                </View>
+
                             </View>
-
-
 
 
 
@@ -48,7 +56,7 @@ export const TripList = ({ data, style, onPress }) => {
                     </View>
                 </TouchableOpacity>
             )
-        }
+            }
         />
     );
 };

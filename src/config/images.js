@@ -19,5 +19,8 @@ export const images={
     shop: require("../assets/images/shop/shop.png"),
     humantwo: require("../assets/images/humantwo/humantwo.png"),
     humanone: require("../assets/images/humanone/humanone.png"),
-    Close: require("../assets/images/Close/Close.png")
+    Close: require("../assets/images/Close/Close.png"),
+    calender: require("../assets/images/calendar/calendar.png"),
+    Blog: require("../assets/images/Blog/Blog.png"),
+    menu: require("../assets/images/menu/menu.png"),
 };

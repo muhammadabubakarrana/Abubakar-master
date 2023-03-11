@@ -1,6 +1,6 @@
 import React from "react";
 import { routes, theme, images, baseStyle } from "../config";
-import { CustomTrip, NearMe, PlanTrip, Review, VenueProfile } from "../screens"
+import { Blog, CustomTrip, Menu, NearMe, PlannedDates, PlanTrip, Review, TripLocation, VenueProfile } from "../screens"
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { Image, StyleSheet } from "react-native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
@@ -8,10 +8,10 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 const Tab = createBottomTabNavigator();
 const Stack = createNativeStackNavigator();
 
-const getIcon=(focused,icon)=>{
-    return( 
-    <Image source={icon}
-        style={{ tintColor: focused ? theme.colors.blue : theme.colors.black }} />
+const getIcon = (focused, icon) => {
+    return (
+        <Image source={icon}
+            style={{ tintColor: focused ? theme.colors.blue : theme.colors.black }} />
     );
 };
 
@@ -29,19 +29,49 @@ const HomeTabs = () => {
                 tabBarItemStyle: styles.item,
                 tabBarActiveBackgroundColor: theme.colors.lightGrey,
             }}>
+
+            {/* 1st Bottom Tab */}
             <Tab.Screen
                 name={routes.NEAR_ME}
                 component={NearMe}
                 options={{
-                    tabBarIcon: ({ focused }) =>  getIcon(focused,images.pinLocation)
+                    tabBarIcon: ({ focused }) => getIcon(focused, images.pinLocation)
                 }}
             />
+            {/* 2nd Bottom Tab */}
 
             <Tab.Screen
                 name={routes.PLAN_TRIP}
                 component={PlanTrip}
                 options={{
-                    tabBarIcon: ({ focused }) => getIcon(focused,images.map)
+                    tabBarIcon: ({ focused }) => getIcon(focused, images.map)
+                }}
+            />
+            {/* 3rd Bottom Tab */}
+
+            <Tab.Screen
+                name={routes.PLANNED_DATES}
+                component={PlannedDates}
+                options={{
+                    tabBarIcon: ({ focused }) => getIcon(focused, images.calender)
+                }}
+            />
+            {/* 4th Bottom Tab */}
+
+            <Tab.Screen
+                name={routes.BLOG}
+                component={Blog}
+                options={{
+                    tabBarIcon: ({ focused }) => getIcon(focused, images.calender)
+                }}
+            />
+            {/* 5th Bottom Tab */}
+
+            <Tab.Screen
+                name={routes.MENU}
+                component={Menu}
+                options={{
+                    tabBarIcon: ({ focused }) => getIcon(focused, images.menu)
                 }}
             />
 
@@ -59,6 +89,7 @@ export const PrivateNavigation = () => {
             <Stack.Screen name={routes.Venue_Profile} component={VenueProfile} />
             <Stack.Screen name={routes.REVIEW} component={Review} />
             <Stack.Screen name={routes.CUSTOM_TRIP} component={CustomTrip} />
+            <Stack.Screen name={routes.TRIP_LOCATION} component={TripLocation} />
         </Stack.Navigator>
     );
 };
