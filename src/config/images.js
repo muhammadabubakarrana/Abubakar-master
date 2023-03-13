@@ -23,4 +23,10 @@ export const images={
     calender: require("../assets/images/calendar/calendar.png"),
     Blog: require("../assets/images/Blog/Blog.png"),
     menu: require("../assets/images/menu/menu.png"),
+    account: require("../assets/images/account/account.png"),
+    bell: require("../assets/images/bell/bell.png"),
+    logout: require("../assets/images/logout/logout.png"),
+    privacy: require("../assets/images/privacy/privacy.png"),
+    setting: require("../assets/images/setting/setting.png"),
+    term: require("../assets/images/term/term.png")
 };

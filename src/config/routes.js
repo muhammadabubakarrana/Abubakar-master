@@ -14,5 +14,7 @@ CUSTOM_TRIP: "Custom Trip",
 TRIP_LOCATION: 'TripLocation',
 PLANNED_DATES: "Planned",
 BLOG: "Blog",
-MENU: 'Menu', 
+MORE: 'More', 
+NOTIFICATION: 'Notification',
+ACCOUNT_SETTINGS: 'Account Settings',
 };

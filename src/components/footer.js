@@ -1,19 +1,42 @@
 import React from "react";
-import { StyleSheet,View, } from "react-native";
+import { StyleSheet, View, Text, TouchableOpacity } from "react-native";
 import { Button } from "../components";
 import { baseStyle, theme } from "../config";
 
 
-export const Footer = ({children,onPress}) => {
+export const Footer = ({ children, onPress, label, labelone, labeltwo, style, showOneButton, ...restProps }) => {
     return (
+        // { ...restProps }
+        // <View style={styles.footer} >
+        //     <Button type="filled" onPress={onPress} >{children}</Button>
+        // </View>
+
+        // }
         <View style={styles.footer} >
-            <Button type="filled" onPress={onPress} >{children}</Button>
+            {showOneButton 
+            ? (
+                <Button onPress={onPress} >
+                    {label}
+                </Button>
+            ) 
+            : (
+                <>
+                    <View style={styles.flex}>
+                        <Button onPress={onPress} style={styles.btn} danger type="outlined">
+                            {labelone}
+                        </Button>
+                        <Button onPress={onPress} style={styles.btn}>
+                            {labeltwo}
+                        </Button>
+                    </View>
+                </>
+            )}
         </View>
     );
 };
 
 
-const styles=StyleSheet.create({
+const styles = StyleSheet.create({
     footer: {
         backgroundColor: theme.colors.white,
         borderTopLeftRadius: baseStyle.borderTopLeftRadius(32),
@@ -30,4 +53,12 @@ const styles=StyleSheet.create({
         shadowOpacity: 1,
         shadowRadius: 6,
     },
+    flex: {
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+        alignItems: 'center',
+    },
+    btn: {
+        width: "47%"
+    }
 });

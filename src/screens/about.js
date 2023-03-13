@@ -23,7 +23,7 @@ export const About = () => {
                 <Heading center>Tell us About Yourself</Heading>
                 <Paragraph center style={styles.para}>
                     Fill out below details before planning your date</Paragraph>
-                <View >
+                <View>
                     <Paragraph>Gender</Paragraph>
                     <View style={styles.chipContainer}>
                         <Chip label="Male" chipStyle={styles.chip} checked />

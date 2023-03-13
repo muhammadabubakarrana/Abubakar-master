@@ -3,9 +3,10 @@ import { FlatList, Image, StyleSheet, TouchableOpacity, View } from "react-nativ
 import { baseStyle, theme, images } from "../config";
 import { Heading, Paragraph } from "../components";
 
-export const List = ({ data, style, onPress }) => {
+export const List = ({ data, style, showTime, onPress, ...restProps }) => {
     return (
         <FlatList
+            {...restProps}
             data={data}
             style={[style]}
             showsVerticalScrollIndicator={false}
@@ -14,21 +15,32 @@ export const List = ({ data, style, onPress }) => {
                     <View style={styles.container}>
                         <Image source={item.img} resizeMode="cover" style={styles.img} />
                         <View style={styles.description}>
-                            <Heading style={styles.heading} >{item.name}</Heading>
+
+                            {
+                                showTime && (
+                                    <Heading style={[{ ...styles.remainingTime, color: theme.colors.green }]} >{item.remainingTime}</Heading>
+                                )
+                            }
+
+                            <Heading style={!showTime ? styles.heading : { ...styles.remainingTime, color: theme.colors.black }} >{item.name}</Heading>
 
 
 
-                            <View
-                                style={{
-                                    ...styles.flex,
-                                    marginVertical: baseStyle.marginVertical(5)
-                                }}>
-                                <Paragraph style={styles.para}>{item.country}</Paragraph>
-                                <View style={styles.flex}>
-                                    <Image source={images.star} style={styles.icon} resizeMode="contain" />
-                                    <Paragraph style={styles.para}>{item.rating}</Paragraph>
-                                </View>
-                            </View>
+                            {
+                                !showTime && (
+                                    <View
+                                        style={{
+                                            ...styles.flex,
+                                            marginVertical: baseStyle.marginVertical(5)
+                                        }}>
+                                        <Paragraph style={styles.para}>{item.country}</Paragraph>
+                                        <View style={styles.flex}>
+                                            <Image source={images.star} style={styles.icon} resizeMode="contain" />
+                                            <Paragraph style={styles.para}>{item.rating}</Paragraph>
+                                        </View>
+                                    </View>
+                                )
+                            }
 
 
                             <View style={styles.flex}>
@@ -73,6 +85,11 @@ const styles = StyleSheet.create({
         borderRadius: baseStyle.borderRadius(8),
         height: "100%",
         flex: 1,
+    },
+    remainingTime:{
+        fontSize: baseStyle.fontSize(12),
+        lineHeight: baseStyle.lineHight(15),
+        marginBottom: baseStyle.marginBottom(5),
     },
     description: {
         paddingVertical: baseStyle.paddingVertical(10),

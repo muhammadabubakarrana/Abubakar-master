@@ -2,19 +2,21 @@ import React from "react";
 import { TouchableOpacity, StyleSheet, Text } from "react-native";
 import { baseStyle, theme } from "../config";
 
-export const Button = ({ children, type, style,danger, ...restProps }) => {
+export const Button = ({ children, type, style, danger, ...restProps }) => {
     return (
         <TouchableOpacity {...restProps}
             style=
             {[type === 'outlined'
-                ? { ...styles.btn, ...styles.btnOutlined, borderColor:danger?"red": theme.colors.blue }
+                ? { ...styles.btn, ...styles.btnOutlined, borderColor: danger ? "red" : theme.colors.blue }
                 : { ...styles.btn, ...styles.btnFilled }, style]}>
 
             <Text style={
                 type === 'outlined'
-                    ? { ...styles.text, ...styles.textOutlined ,
-                        Color : danger ? 'red' : theme.colors.blue }
-                    : { ...styles.text, ...styles.textFilled}
+                    ? {
+                        ...styles.text, ...styles.textOutlined,
+                        color: danger ? 'red' : theme.colors.blue
+                    }
+                    : { ...styles.text, ...styles.textFilled }
             }>{children}</Text>
         </TouchableOpacity>
     );
@@ -24,9 +26,9 @@ export const Button = ({ children, type, style,danger, ...restProps }) => {
 
 const styles = StyleSheet.create({
     btn: {
-        paddingVertical: baseStyle.paddingVertical (12),
+        paddingVertical: baseStyle.paddingVertical(12),
         // paddingHorizontal: 142,
-        borderRadius:baseStyle.borderRadius (23),
+        borderRadius: baseStyle.borderRadius(23),
         shadowColor: theme.colors.silver,
         shadowOffset: {
             width: 0,
@@ -43,12 +45,12 @@ const styles = StyleSheet.create({
     btnOutlined: {
         backgroundColor: theme.colors.white,
         borderColor: theme.colors.blue,
-        borderWidth:baseStyle.borderWidth (1),
+        borderWidth: baseStyle.borderWidth(1),
     },
     text: {
-        fontSize:baseStyle.fontSize(12),
+        fontSize: baseStyle.fontSize(12),
         fontFamily: theme.font.regular,
-        lineHeight: baseStyle.lineHight (18),
+        lineHeight: baseStyle.lineHight(18),
     },
     textOutlined: {
         color: theme.colors.blue,

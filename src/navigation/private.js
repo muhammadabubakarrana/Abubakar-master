@@ -1,6 +1,6 @@
 import React from "react";
 import { routes, theme, images, baseStyle } from "../config";
-import { Blog, CustomTrip, Menu, NearMe, PlannedDates, PlanTrip, Review, TripLocation, VenueProfile } from "../screens"
+import { AccountSettings, Blog, CustomTrip, Menu, More, NearMe, Notification, PlannedDates, PlanTrip, Review, TripLocation, VenueProfile } from "../screens"
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { Image, StyleSheet } from "react-native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
@@ -68,8 +68,8 @@ const HomeTabs = () => {
             {/* 5th Bottom Tab */}
 
             <Tab.Screen
-                name={routes.MENU}
-                component={Menu}
+                name={routes.MORE}
+                component={More}
                 options={{
                     tabBarIcon: ({ focused }) => getIcon(focused, images.menu)
                 }}
@@ -90,6 +90,8 @@ export const PrivateNavigation = () => {
             <Stack.Screen name={routes.REVIEW} component={Review} />
             <Stack.Screen name={routes.CUSTOM_TRIP} component={CustomTrip} />
             <Stack.Screen name={routes.TRIP_LOCATION} component={TripLocation} />
+            <Stack.Screen name={routes.NOTIFICATION} component={Notification} />
+            <Stack.Screen name={routes.ACCOUNT_SETTINGS} component={AccountSettings} />
         </Stack.Navigator>
     );
 };

@@ -13,4 +13,6 @@ export * from "./custom-trip";
 export * from "./trip-location";
 export * from "./planned-dates";
 export * from "./blog";
-export * from "./menu";
+export * from "./more";
+export * from "./notification";
+export * from "./account-setttings";

@@ -76,6 +76,11 @@ const styles = StyleSheet.create({
         height: "100%",
         flex: 1,
     },
+    remainingTime:{
+        fontSize: baseStyle.fontSize(12),
+        lineHeight: baseStyle.lineHight(15),
+        marginBottom: baseStyle.marginBottom(5),
+    },
     description: {
         paddingVertical: baseStyle.paddingVertical(10),
         paddingLeft: baseStyle.paddingLeft(15),
